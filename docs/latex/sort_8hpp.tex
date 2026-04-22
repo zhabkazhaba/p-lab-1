@@ -1,0 +1,76 @@
+\doxysection{src/\+sort.hpp File Reference}
+\hypertarget{sort_8hpp}{}\label{sort_8hpp}\index{src/sort.hpp@{src/sort.hpp}}
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$utility$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{sort_8hpp_a0be9b6b5d02c9b0824ac522dc6fb341b}{insertion\+\_\+sort}} (std::\+vector$<$ T $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em Сортировка простыми вставками \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{sort_8hpp_a6a5d7c7f0f12ef7b34202e95881c5472}{shaker\+\_\+sort}} (std::\+vector$<$ T $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em Шейкер-\/сортировка \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{sort_8hpp_a72075569492e60d08f5a1c4999a919cd}{make\+\_\+heap}} (std::\+vector$<$ T $>$ \&arr, int n, int i)
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \doxymbox{\hyperlink{sort_8hpp_a713e678569e48f12843c5b59674663bf}{heap\+\_\+sort}} (std::\+vector$<$ T $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em Пирамидальная сортировка \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{sort_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{sort_8hpp_a713e678569e48f12843c5b59674663bf}\index{sort.hpp@{sort.hpp}!heap\_sort@{heap\_sort}}
+\index{heap\_sort@{heap\_sort}!sort.hpp@{sort.hpp}}
+\doxysubsubsection{\texorpdfstring{heap\_sort()}{heap\_sort()}}
+{\footnotesize\ttfamily \label{sort_8hpp_a713e678569e48f12843c5b59674663bf} 
+template$<$typename T$>$ \\
+void heap\+\_\+sort (\begin{DoxyParamCaption}\item[{std::\+vector$<$ T $>$ \&}]{arr}{}\end{DoxyParamCaption})}
+
+
+
+Пирамидальная сортировка 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Ссылка на вектор, который нужно отсортировать. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sort_8hpp_a0be9b6b5d02c9b0824ac522dc6fb341b}\index{sort.hpp@{sort.hpp}!insertion\_sort@{insertion\_sort}}
+\index{insertion\_sort@{insertion\_sort}!sort.hpp@{sort.hpp}}
+\doxysubsubsection{\texorpdfstring{insertion\_sort()}{insertion\_sort()}}
+{\footnotesize\ttfamily \label{sort_8hpp_a0be9b6b5d02c9b0824ac522dc6fb341b} 
+template$<$typename T$>$ \\
+void insertion\+\_\+sort (\begin{DoxyParamCaption}\item[{std::\+vector$<$ T $>$ \&}]{arr}{}\end{DoxyParamCaption})}
+
+
+
+Сортировка простыми вставками 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Ссылка на вектор, который нужно отсортировать \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sort_8hpp_a72075569492e60d08f5a1c4999a919cd}\index{sort.hpp@{sort.hpp}!make\_heap@{make\_heap}}
+\index{make\_heap@{make\_heap}!sort.hpp@{sort.hpp}}
+\doxysubsubsection{\texorpdfstring{make\_heap()}{make\_heap()}}
+{\footnotesize\ttfamily \label{sort_8hpp_a72075569492e60d08f5a1c4999a919cd} 
+template$<$typename T$>$ \\
+void make\+\_\+heap (\begin{DoxyParamCaption}\item[{std::\+vector$<$ T $>$ \&}]{arr}{, }\item[{int}]{n}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+\Hypertarget{sort_8hpp_a6a5d7c7f0f12ef7b34202e95881c5472}\index{sort.hpp@{sort.hpp}!shaker\_sort@{shaker\_sort}}
+\index{shaker\_sort@{shaker\_sort}!sort.hpp@{sort.hpp}}
+\doxysubsubsection{\texorpdfstring{shaker\_sort()}{shaker\_sort()}}
+{\footnotesize\ttfamily \label{sort_8hpp_a6a5d7c7f0f12ef7b34202e95881c5472} 
+template$<$typename T$>$ \\
+void shaker\+\_\+sort (\begin{DoxyParamCaption}\item[{std::\+vector$<$ T $>$ \&}]{arr}{}\end{DoxyParamCaption})}
+
+
+
+Шейкер-\/сортировка 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & Ссылка на вектор, который нужно отсортировать. \\
+\hline
+\end{DoxyParams}

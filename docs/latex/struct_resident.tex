@@ -1,0 +1,145 @@
+\doxysection{Resident Struct Reference}
+\hypertarget{struct_resident}{}\label{struct_resident}\index{Resident@{Resident}}
+
+
+Структура с данными о жильце района  
+
+
+
+
+{\ttfamily \+\#include $<$resident.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{struct_resident_af23000038bbe9f692d81d680ed268ab1}{operator$<$}} (const \doxymbox{\hyperlink{struct_resident}{Resident}} \&other) const
+\begin{DoxyCompactList}\small\item\em Оператор "{}меньше"{}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{struct_resident_a82afee2efa025c4db2cf8d7d86b6e2b2}{operator$>$}} (const \doxymbox{\hyperlink{struct_resident}{Resident}} \&other) const
+\begin{DoxyCompactList}\small\item\em Оператор "{}больше"{}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{struct_resident_aefbb3aa5846660a2f4ca6d4a66792f66}{operator$<$=}} (const \doxymbox{\hyperlink{struct_resident}{Resident}} \&other) const
+\begin{DoxyCompactList}\small\item\em Оператор "{}меньше или равно"{}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{struct_resident_a17ef32888948031e87c80c2c03471c5c}{operator$>$=}} (const \doxymbox{\hyperlink{struct_resident}{Resident}} \&other) const
+\begin{DoxyCompactList}\small\item\em Оператор "{}больше или равно"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::\+string \doxymbox{\hyperlink{struct_resident_a3d45c8431cea0c04674859a7ebf26054}{fio}}
+\begin{DoxyCompactList}\small\item\em ФИО жильца \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{struct_resident_add5f0908a1d8fe2abca58677a511c490}{street}}
+\begin{DoxyCompactList}\small\item\em Название улицы \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{struct_resident_a3be2986708061a5e8911baec3cc52770}{house}}
+\begin{DoxyCompactList}\small\item\em Номер дома \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05}{apartment}}
+\begin{DoxyCompactList}\small\item\em Номер квартиры \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{struct_resident_a516543a87fd506524dbb1d6b90e3b8de}{birth\+\_\+year}}
+\begin{DoxyCompactList}\small\item\em Год рождения \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Структура с данными о жильце района 
+
+Используется для последующих сортировок 
+
+\label{doc-func-members}
+\Hypertarget{struct_resident_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_resident_af23000038bbe9f692d81d680ed268ab1}\index{Resident@{Resident}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{struct_resident_af23000038bbe9f692d81d680ed268ab1} 
+bool Resident::\+operator$<$ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_resident}{Resident}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Оператор "{}меньше"{}. 
+
+Сравнивает жильцов лексикографически \Hypertarget{struct_resident_aefbb3aa5846660a2f4ca6d4a66792f66}\index{Resident@{Resident}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily \label{struct_resident_aefbb3aa5846660a2f4ca6d4a66792f66} 
+bool Resident::\+operator$<$= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_resident}{Resident}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Оператор "{}меньше или равно"{}. 
+
+\Hypertarget{struct_resident_a82afee2efa025c4db2cf8d7d86b6e2b2}\index{Resident@{Resident}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily \label{struct_resident_a82afee2efa025c4db2cf8d7d86b6e2b2} 
+bool Resident::\+operator$>$ (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_resident}{Resident}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Оператор "{}больше"{}. 
+
+\Hypertarget{struct_resident_a17ef32888948031e87c80c2c03471c5c}\index{Resident@{Resident}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily \label{struct_resident_a17ef32888948031e87c80c2c03471c5c} 
+bool Resident::\+operator$>$= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_resident}{Resident}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Оператор "{}больше или равно"{}. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_resident_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05}\index{Resident@{Resident}!apartment@{apartment}}
+\index{apartment@{apartment}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{apartment}{apartment}}
+{\footnotesize\ttfamily \label{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05} 
+int Resident::\+apartment}
+
+
+
+Номер квартиры 
+
+\Hypertarget{struct_resident_a516543a87fd506524dbb1d6b90e3b8de}\index{Resident@{Resident}!birth\_year@{birth\_year}}
+\index{birth\_year@{birth\_year}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{birth\_year}{birth\_year}}
+{\footnotesize\ttfamily \label{struct_resident_a516543a87fd506524dbb1d6b90e3b8de} 
+int Resident::\+birth\+\_\+year}
+
+
+
+Год рождения 
+
+\Hypertarget{struct_resident_a3d45c8431cea0c04674859a7ebf26054}\index{Resident@{Resident}!fio@{fio}}
+\index{fio@{fio}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{fio}{fio}}
+{\footnotesize\ttfamily \label{struct_resident_a3d45c8431cea0c04674859a7ebf26054} 
+std::\+string Resident::\+fio}
+
+
+
+ФИО жильца 
+
+\Hypertarget{struct_resident_a3be2986708061a5e8911baec3cc52770}\index{Resident@{Resident}!house@{house}}
+\index{house@{house}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{house}{house}}
+{\footnotesize\ttfamily \label{struct_resident_a3be2986708061a5e8911baec3cc52770} 
+int Resident::\+house}
+
+
+
+Номер дома 
+
+\Hypertarget{struct_resident_add5f0908a1d8fe2abca58677a511c490}\index{Resident@{Resident}!street@{street}}
+\index{street@{street}!Resident@{Resident}}
+\doxysubsubsection{\texorpdfstring{street}{street}}
+{\footnotesize\ttfamily \label{struct_resident_add5f0908a1d8fe2abca58677a511c490} 
+std::\+string Resident::\+street}
+
+
+
+Название улицы 
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+src/\+\doxymbox{\hyperlink{resident_8hpp}{resident.\+hpp}}\end{DoxyCompactItemize}

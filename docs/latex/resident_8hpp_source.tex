@@ -1,0 +1,35 @@
+\doxysection{resident.\+hpp}
+\hypertarget{resident_8hpp_source}{}\label{resident_8hpp_source}\index{src/resident.hpp@{src/resident.hpp}}
+\doxymbox{\hyperlink{resident_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <tuple>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_resident}{Resident}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_resident_a3d45c8431cea0c04674859a7ebf26054}{fio}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_resident_add5f0908a1d8fe2abca58677a511c490}{street}};\ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_resident_a3be2986708061a5e8911baec3cc52770}{house}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05}{apartment}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_resident_a516543a87fd506524dbb1d6b90e3b8de}{birth\_year}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_resident_af23000038bbe9f692d81d680ed268ab1}{operator<}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_resident}{Resident}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::tie(\doxymbox{\hyperlink{struct_resident_add5f0908a1d8fe2abca58677a511c490}{street}},\ \doxymbox{\hyperlink{struct_resident_a3be2986708061a5e8911baec3cc52770}{house}},\ \doxymbox{\hyperlink{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05}{apartment}},\ \doxymbox{\hyperlink{struct_resident_a3d45c8431cea0c04674859a7ebf26054}{fio}},\ \doxymbox{\hyperlink{struct_resident_a516543a87fd506524dbb1d6b90e3b8de}{birth\_year}})\ <\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::tie(other.\doxymbox{\hyperlink{struct_resident_add5f0908a1d8fe2abca58677a511c490}{street}},\ other.\doxymbox{\hyperlink{struct_resident_a3be2986708061a5e8911baec3cc52770}{house}},\ other.\doxymbox{\hyperlink{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05}{apartment}},\ other.\doxymbox{\hyperlink{struct_resident_a3d45c8431cea0c04674859a7ebf26054}{fio}},\ other.\doxymbox{\hyperlink{struct_resident_a516543a87fd506524dbb1d6b90e3b8de}{birth\_year}});}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_resident_a82afee2efa025c4db2cf8d7d86b6e2b2}{operator>}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_resident}{Resident}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::tie(\doxymbox{\hyperlink{struct_resident_add5f0908a1d8fe2abca58677a511c490}{street}},\ \doxymbox{\hyperlink{struct_resident_a3be2986708061a5e8911baec3cc52770}{house}},\ \doxymbox{\hyperlink{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05}{apartment}},\ \doxymbox{\hyperlink{struct_resident_a3d45c8431cea0c04674859a7ebf26054}{fio}},\ \doxymbox{\hyperlink{struct_resident_a516543a87fd506524dbb1d6b90e3b8de}{birth\_year}})\ >\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::tie(other.\doxymbox{\hyperlink{struct_resident_add5f0908a1d8fe2abca58677a511c490}{street}},\ other.\doxymbox{\hyperlink{struct_resident_a3be2986708061a5e8911baec3cc52770}{house}},\ other.\doxymbox{\hyperlink{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05}{apartment}},\ other.\doxymbox{\hyperlink{struct_resident_a3d45c8431cea0c04674859a7ebf26054}{fio}},\ other.\doxymbox{\hyperlink{struct_resident_a516543a87fd506524dbb1d6b90e3b8de}{birth\_year}});}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_resident_aefbb3aa5846660a2f4ca6d4a66792f66}{operator<=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_resident}{Resident}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ >\ other);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{struct_resident_a17ef32888948031e87c80c2c03471c5c}{operator>=}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_resident}{Resident}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ <\ other);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

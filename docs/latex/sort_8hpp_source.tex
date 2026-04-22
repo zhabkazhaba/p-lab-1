@@ -1,0 +1,92 @@
+\doxysection{sort.\+hpp}
+\hypertarget{sort_8hpp_source}{}\label{sort_8hpp_source}\index{src/sort.hpp@{src/sort.hpp}}
+\doxymbox{\hyperlink{sort_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <utility>}\ \textcolor{comment}{//\ для\ std::swap}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{sort_8hpp_a0be9b6b5d02c9b0824ac522dc6fb341b}{insertion\_sort}}(std::vector<T>\&\ arr)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (arr.empty())\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(arr.size());}
+\DoxyCodeLine{00015\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ n;\ ++i)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ T\ key\ =\ arr[i];}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ i\ -\/\ 1;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ >=\ 0\ \&\&\ arr[j]\ >\ key)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ arr[j\ +\ 1]\ =\ arr[j];}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ j-\/-\/;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ arr[j\ +\ 1]\ =\ key;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{sort_8hpp_a6a5d7c7f0f12ef7b34202e95881c5472}{shaker\_sort}}(std::vector<T>\&\ arr)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (arr.empty())\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ swapped\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ start\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ end\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(arr.size())\ -\/\ 1;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{while}\ (swapped)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ swapped\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Проход\ слева\ направо}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ start;\ i\ <\ end;\ ++i)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[i]\ >\ arr[i\ +\ 1])\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(arr[i],\ arr[i\ +\ 1]);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ swapped\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!swapped)\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ swapped\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ -\/-\/end;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Проход\ справа\ налево}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ end\ -\/\ 1;\ i\ >=\ start;\ -\/-\/i)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr[i]\ >\ arr[i\ +\ 1])\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(arr[i],\ arr[i\ +\ 1]);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ swapped\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ ++start;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{sort_8hpp_a72075569492e60d08f5a1c4999a919cd}{make\_heap}}(std::vector<T>\&\ arr,\ \textcolor{keywordtype}{int}\ n,\ \textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ largest\ =\ i;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ left\ =\ 2\ *\ i\ +\ 1;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ right\ =\ 2\ *\ i\ +\ 2;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ <\ n\ \&\&\ arr[left]\ >\ arr[largest])}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ largest\ =\ left;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (right\ <\ n\ \&\&\ arr[right]\ >\ arr[largest])}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ largest\ =\ right;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (largest\ !=\ i)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::swap(arr[i],\ arr[largest]);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sort_8hpp_a72075569492e60d08f5a1c4999a919cd}{make\_heap}}(arr,\ n,\ largest);}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{sort_8hpp_a713e678569e48f12843c5b59674663bf}{heap\_sort}}(std::vector<T>\&\ arr)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ n\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(arr.size());}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ n\ /\ 2\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sort_8hpp_a72075569492e60d08f5a1c4999a919cd}{make\_heap}}(arr,\ n,\ i);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ n\ -\/\ 1;\ i\ >\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::swap(arr[0],\ arr[i]);\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{sort_8hpp_a72075569492e60d08f5a1c4999a919cd}{make\_heap}}(arr,\ i,\ 0);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}

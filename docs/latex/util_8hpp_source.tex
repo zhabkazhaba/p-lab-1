@@ -1,0 +1,66 @@
+\doxysection{util.\+hpp}
+\hypertarget{util_8hpp_source}{}\label{util_8hpp_source}\index{src/util.hpp@{src/util.hpp}}
+\doxymbox{\hyperlink{util_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{resident_8hpp}{resident.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ std::vector<Resident>\ \doxymbox{\hyperlink{util_8hpp_a65ea5c319652024cd4f9467d6a948187}{read\_csv}}(\textcolor{keyword}{const}\ std::string\&\ filename)\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ std::vector<Resident>\ result;}
+\DoxyCodeLine{00010\ \ \ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00011\ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Не\ удалось\ открыть\ файл\ на\ чтение"{}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::getline(file,\ line))\ \{\}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.empty())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::stringstream\ ss(line);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::string\ fio,\ street,\ house\_str,\ apt\_str,\ year\_str;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::getline(ss,\ fio,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::getline(ss,\ street,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::getline(ss,\ house\_str,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ std::getline(ss,\ apt\_str,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::getline(ss,\ year\_str,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_resident}{Resident}}\ r;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ r.\doxymbox{\hyperlink{struct_resident_a3d45c8431cea0c04674859a7ebf26054}{fio}}\ =\ fio;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ r.\doxymbox{\hyperlink{struct_resident_add5f0908a1d8fe2abca58677a511c490}{street}}\ =\ street;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ r.\doxymbox{\hyperlink{struct_resident_a3be2986708061a5e8911baec3cc52770}{house}}\ =\ std::stoi(house\_str);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ r.\doxymbox{\hyperlink{struct_resident_ac9932a7b7e91f2f55ed0fb779c130f05}{apartment}}\ =\ std::stoi(apt\_str);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ r.\doxymbox{\hyperlink{struct_resident_a516543a87fd506524dbb1d6b90e3b8de}{birth\_year}}\ =\ std::stoi(year\_str);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ result.push\_back(r);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{util_8hpp_aa3378d8c86954ddc657884b257f3ae28}{write\_csv}}(\textcolor{keyword}{const}\ std::string\&\ filename,\ \textcolor{keyword}{const}\ std::vector<Resident>\&\ data)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ std::ofstream\ file(filename);}
+\DoxyCodeLine{00045\ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Не\ удалось\ открыть\ файл\ на\ запись"{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ file\ <<\ \textcolor{stringliteral}{"{}fio;street;house;apartment;birth\_year\(\backslash\)n"{}};}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ r\ :\ data)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ file\ <<\ r.fio\ <<\ \textcolor{stringliteral}{"{};"{}}\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ r.street\ <<\ \textcolor{stringliteral}{"{};"{}}\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ r.house\ <<\ \textcolor{stringliteral}{"{};"{}}\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ r.apartment\ <<\ \textcolor{stringliteral}{"{};"{}}\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ r.birth\_year\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
