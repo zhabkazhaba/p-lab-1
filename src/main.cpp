@@ -11,14 +11,6 @@
 #include <windows.h>
 #endif
 
-template <typename Func>
-long long measure_time(Func f, std::vector<Resident>& data) {
-    auto start = std::chrono::high_resolution_clock::now();
-    f(data);
-    auto end = std::chrono::high_resolution_clock::now();
-    return std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-}
-
 int main() {
     #ifdef _WIN32
     SetConsoleCP(65001);
@@ -60,10 +52,25 @@ int main() {
         auto data_insertion = slice;
         auto data_shaker = slice;
 
-        long long time_std = measure_time([](std::vector<Resident>& arr) { std::sort(arr.begin(), arr.end()); }, data_std);
-        long long time_heap = measure_time([](std::vector<Resident>& arr) { heap_sort(arr); }, data_heap);
-        long long time_insertion = measure_time([](std::vector<Resident>& arr) { insertion_sort(arr); }, data_insertion);
-        long long time_shaker = measure_time([](std::vector<Resident>& arr) { shaker_sort(arr); }, data_shaker);
+        auto start = std::chrono::high_resolution_clock::now();
+        std::sort(data_std.begin(), data_std.end());
+        auto end = std::chrono::high_resolution_clock::now();
+        long long time_std = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        start = std::chrono::high_resolution_clock::now();
+        heap_sort(data_heap);
+        end = std::chrono::high_resolution_clock::now();
+        long long time_heap = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        start = std::chrono::high_resolution_clock::now();
+        insertion_sort(data_insertion);
+        end = std::chrono::high_resolution_clock::now();
+        long long time_insertion = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        start = std::chrono::high_resolution_clock::now();
+        shaker_sort(data_shaker);
+        end = std::chrono::high_resolution_clock::now();
+        long long time_shaker = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
         t_file << size << ";" 
                << time_std << ";" 
